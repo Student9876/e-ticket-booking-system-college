@@ -1,0 +1,17 @@
+node_modules/
+
+.env
+
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+logs/
+*.log
+npm-debug.log*
+
+*.db
+
+.DS_Store
+Thumbs.db
