@@ -1,0 +1,22 @@
+<!-- dashboard.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+</head>
+<body>
+    <h1>Welcome to the Dashboard</h1>
+    <div class="train-list">
+        <% trains.forEach(train => { %>
+            <div class="train-card">
+                <h2><%= train.train_name %></h2>
+                <p>Departure: <%= train.starting_point %></p>
+                <p>Destination: <%= train.ending_point %></p>
+                <!-- Add more train details here -->
+            </div>
+        <% }); %>
+    </div>
+</body>
+</html>
