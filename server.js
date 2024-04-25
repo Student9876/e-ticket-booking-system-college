@@ -60,9 +60,8 @@ app.get('/login', (req, res) => {
 
 app.get('/dashboard', authenticateUser, async (req, res) => {
   try {
-    // Fetch all trains from the database
     const trains = await Train.find();
-    // Render the Dashboard page with the fetched trains
+    console.log(trains);
     res.render('dashboard', { trains });
   } catch (error) {
     console.error(error);
