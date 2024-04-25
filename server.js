@@ -77,7 +77,7 @@ app.post('/login', async (req, res) => {
   try {
     const collection = await User.find({ username: username, password:password });
     console.log(collection);
-    if (collection) {
+    if (collection.length) {
       req.session.user = collection;
       res.redirect('/dashboard');
     } else {
