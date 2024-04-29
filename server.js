@@ -1,5 +1,3 @@
-// server.js
-
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
@@ -65,7 +63,7 @@ app.get('/login', (req, res) => {
 app.get('/dashboard', authenticateUser, async (req, res) => {
   try {
     const trains = await Train.find();
-    // console.log(trains);
+    console.log(trains);
     res.render('dashboard', { trains });
   } catch (error) {
     console.error(error);
