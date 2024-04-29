@@ -18,7 +18,7 @@
                 <h3>Available Classes:</h3>
                 <ul>
                     <% train.classes.forEach(className => { %>
-                        <li><a href="/booking?class=<%= className %>&train_no=<%= train.train_no %>"><%= className %> - Price: <%= train.classPrice[train.classes.indexOf(className)] %></a></li>
+                        <li><a href="/booking?class=<%= className %>&train_no=<%= train.train_no %>&price=<%= train.classPrice[train.classes.indexOf(className)] %>"><%= className %> - Price: <%= train.classPrice[train.classes.indexOf(className)] %></a></li>
                     <% }); %>
                 </ul>
             </div>

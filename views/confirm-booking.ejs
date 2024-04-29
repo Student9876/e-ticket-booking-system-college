@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confirmed Booking</title>
+    <!-- Add any necessary CSS files here -->
+</head>
+<body>
+    <h1>Confirmed Booking</h1>
+
+    <h2>Passengers</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Age</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% passengers.name.forEach((name, index) => { %>
+                <tr>
+                    <td><%= name %></td>
+                    <td><%= passengers.age[index] %></td>
+                    <td><%= passengers.phone[index] %></td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+
+    <h2>Train Details</h2>
+    <p>Train Number: <%= train.train_no %></p>
+    <p>Train Name: <%= train.train_name %></p>
+    <p>Next Departure: <%= train.weekday_for_departure[0] %> at <%= train.departure_time %></p>
+
+    <h2>Total Fee</h2>
+    <p>Total Passengers: <%= totalPassengers %></p>
+    <p>Class Price: <%= classPrice %></p>
+    <p>Total Fee: <%= totalFee %></p>
+
+    <!-- Confirm button -->
+    <form action="/confirm-booking" method="POST">
+        <input type="hidden" name="train_no" value="<%= train.train_no %>">
+        <input type="hidden" name="total_fee" value="<%= totalFee %>">
+        <button type="submit">Confirm Booking</button>
+    </form>
+
+    <!-- Add any additional content or functionality here -->
+</body>
+</html>

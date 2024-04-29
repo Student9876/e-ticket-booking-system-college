@@ -1,44 +1,39 @@
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booking</title>
-    <link rel="stylesheet" href="/css/styles.css">
-</head>
-<body>
-    <h1>Booking</h1>
-    <form id="booking-form" action="/book" method="POST">
-        <div id="passengers">
-            <div class="passenger">
-                <label for="name1">Name:</label>
-                <input type="text" id="name1" name="name[]" required>
-                <label for="age1">Age:</label>
-                <input type="number" id="age1" name="age[]" required>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Booking</title>
+        <!-- Add any necessary CSS files here -->
+    </head>
+    <body>
+        <h1>Booking</h1>
+        <form action="/booking" method="POST">
+            <div id="passenger-forms">
+                <div class="passenger-form">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name[]" required>
+                    <label for="age">Age:</label>
+                    <input type="number" id="age" name="age[]" required>
+                    <label for="phone">Phone:</label>
+                    <input type="tel" id="phone" name="phone[]" required>
+                </div>
             </div>
-        </div>
-        <button type="button" id="add-passenger">+</button>
-        <label for="tickets">Number of Tickets:</label>
-        <input type="number" id="tickets" name="tickets" value="1" min="1" required>
-        <input type="hidden" id="selected-class" name="class" value="<%= class %>">
-        <input type="hidden" id="train-no" name="train_no" value="<%= train_no %>">
-        <button type="submit">Book</button>
-    </form>
 
-    <script>
-        document.getElementById('add-passenger').addEventListener('click', function() {
-            var passengers = document.getElementById('passengers');
-            var passengerCount = passengers.getElementsByClassName('passenger').length + 1;
+            <!-- Button to add more passengers -->
+            <button type="button" id="add-passenger-btn">+</button>
 
-            var newPassenger = document.createElement('div');
-            newPassenger.classList.add('passenger');
-            newPassenger.innerHTML = `
-                <label for="name${passengerCount}">Name:</label>
-                <input type="text" id="name${passengerCount}" name="name[]" required>
-                <label for="age${passengerCount}">Age:</label>
-                <input type="number" id="age${passengerCount}" name="age[]" required>
-            `;
-            passengers.appendChild(newPassenger);
+            <!-- Proceed button -->
+            <button type="submit">Proceed</button>
+        </form>
+
+        <script>
+        // JavaScript to handle adding more passenger forms
+        document.getElementById('add-passenger-btn').addEventListener('click', function() {
+            const passengerForms = document.getElementById('passenger-forms');
+            const newPassengerForm = document.querySelector('.passenger-form').cloneNode(true);
+            passengerForms.appendChild(newPassengerForm);
         });
     </script>
-</body>
+    </body>
 </html>
