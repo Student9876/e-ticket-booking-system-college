@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Confirm Booking</title>
-    <!-- Add any necessary CSS files here -->
 </head>
 <body>
     <h1>Confirm Booking</h1>
@@ -39,13 +38,10 @@
     <p>Class Price: <%= classPrice %></p>
     <p>Total Fee: <%= totalFee %></p>
 
-    <!-- Confirm button -->
     <form action="/confirm-booking" method="POST">
         <input type="hidden" name="train_no" value="<%= train.train_no %>">
         <input type="hidden" name="total_fee" value="<%= totalFee %>">
         <button type="submit">Confirm Booking</button>
     </form>
-
-    <!-- Add any additional content or functionality here -->
 </body>
 </html>

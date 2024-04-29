@@ -4,7 +4,6 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Booking</title>
-        <!-- Add any necessary CSS files here -->
     </head>
     <body>
         <h1>Booking</h1>
@@ -20,15 +19,12 @@
                 </div>
             </div>
 
-            <!-- Button to add more passengers -->
             <button type="button" id="add-passenger-btn">+</button>
 
-            <!-- Proceed button -->
             <button type="submit">Proceed</button>
         </form>
 
         <script>
-        // JavaScript to handle adding more passenger forms
         document.getElementById('add-passenger-btn').addEventListener('click', function() {
             const passengerForms = document.getElementById('passenger-forms');
             const newPassengerForm = document.querySelector('.passenger-form').cloneNode(true);
