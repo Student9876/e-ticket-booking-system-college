@@ -1,22 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Dashboard</title>
-        <link rel="stylesheet" href="/css/styles.css">
-    </head>
-    <body>
-        <h1>Dashboard</h1>
-        <div class="train-cards">
-            <% trains.forEach(train => { %>
-            <div class="train-card">
-                <h2><%= train.train_name %></h2>
-                <p>Train Number: <%= train.train_no %></p>
-                <p>Next Departure: <%= train.weekday_for_departure[0] %> at <%=
-                    train.departure_time %></p>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Dashboard</h1>
+    <div class="train-cards">
+        <% trains.forEach(train => { %>
+        <div class="train-card">
+            <h2><%= train.train_name %></h2>
+            <p>Train Number: <%= train.train_no %></p>
+            <p>Next Departure: <%= train.weekday_for_departure[0] %> at <%= train.departure_time %></p>
+            <div class="available-classes">
+                <h3>Available Classes:</h3>
+                <ul>
+                    <% train.classes.forEach(className => { %>
+                        <li><a href="/booking?class=<%= className %>&train_no=<%= train.train_no %>"><%= className %> - Price: <%= train.classPrice[train.classes.indexOf(className)] %></a></li>
+                    <% }); %>
+                </ul>
             </div>
-            <% }); %>
         </div>
-    </body>
+        <% }); %>
+    </div>
+</body>
 </html>

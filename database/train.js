@@ -49,8 +49,11 @@ const trainSchema = new mongoose.Schema({
         destination: String,
         attractions: [String],
         events: [String]
-    }
+    },
+    classes: [String],
+    classPrice: [String]
 });
+
 
 const Train = mongoose.model('Train', trainSchema);
 

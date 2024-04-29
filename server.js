@@ -39,35 +39,44 @@ app.use(session({
 // Middleware for authentication
 const authenticateUser = (req, res, next) => {
   if (req.session && req.session.user) {
-    // User is authenticated
     next();
   } else {
-    // User is not authenticated, redirect to login page
     res.redirect('/login');
   }
 };
 
 
 app.get('/', (req, res) => {
-  // Serve the homepage (index.html)
   res.sendFile(path.join(__dirname, 'public', 'html', 'index.html'));
 });
 
 app.get('/login', (req, res) => {
-  // Serve the login page (login.html)
   res.sendFile(path.join(__dirname, 'public', 'html', 'login.html'));
 });
 
 app.get('/dashboard', authenticateUser, async (req, res) => {
   try {
     const trains = await Train.find();
-    console.log(trains);
+    // console.log(trains);w
     res.render('dashboard', { trains });
   } catch (error) {
     console.error(error);
     res.status(500).send('Server Error');
   }
 });
+
+
+app.get('/booking', (req, res) => {
+  const className = req.query.class;
+  const trainNo = req.query.train_no;
+
+  console.log('Class:', className);
+  console.log('Train Number:', trainNo);
+
+  res.render('booking');
+  
+});
+
 
 
 app.post('/login', async (req, res) => {
@@ -87,10 +96,6 @@ app.post('/login', async (req, res) => {
     res.status(500).send('Server Error');
   }
 });
-
-
-
-
 
 
 

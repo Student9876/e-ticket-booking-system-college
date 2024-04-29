@@ -42,45 +42,9 @@ const trainsData = [
             "destination": "Bhopal",
             "attractions": ["Taj-ul-Masajid", "Upper Lake", "Bhimbetka Caves"],
             "events": ["Bhopal Literature Festival (April 15-18)", "Bhopal Utsav (November 1-5)"]
-        }
-    },
-    {
-        "train_no": "12345",
-        "train_name": "Mumbai-Delhi Rajdhani Express",
-        "weekday_for_departure": ["Monday", "Wednesday", "Friday"],
-        "starting_point": "Mumbai",
-        "ending_point": "Delhi",
-        "departure_time": "08:00",
-        "arrival_time": "20:00",
-        "duration": "12 hours",
-        "intermediate_stops": ["Surat", "Vadodara", "Ratlam", "Kota", "Mathura"],
-        "facilities": {
-            "dining": true,
-            "restrooms": true,
-            "wifi": true,
-            "power_outlets": true,
-            "entertainment": true
         },
-        "food_options": {
-            "catering_services": true,
-            "menu_options": ["Vegetarian Meal", "Non-Vegetarian Meal", "Snacks", "Beverages"],
-            "meal_timings": "Breakfast: 08:30-10:00, Lunch: 12:30-14:00, Dinner: 19:00-21:00",
-            "special_meals": true
-        },
-        "train_status": {
-            "current_location": "Mathura",
-            "next_station": "Delhi",
-            "estimated_arrival_time_next_station": "20:00",
-            "delay_status": "On time"
-        },
-        "weather_forecast": {
-            "destination": "Delhi",
-            "forecast": "Clear skies, temperature: 25°C"
-        },
-        "local_attractions": {
-            "destination": "Delhi",
-            "attractions": ["Red Fort", "India Gate", "Qutub Minar"]
-        }
+        "classes": ["First Class", "Second Class", "Sleeper Class"],
+        "classPrice": ["₹5000", "₹3500", "₹2500"]
     },
     {
         "train_no": "34567",
@@ -93,11 +57,11 @@ const trainsData = [
         "duration": "5 hours",
         "intermediate_stops": ["Bharatpur"],
         "facilities": {
-            "restrooms": true,
-            "power_outlets": true
+            "restrooms": "true",
+            "power_outlets": "true"
         },
         "food_options": {
-            "catering_services": false
+            "catering_services": "false"
         },
         "train_status": {
             "current_location": "Bharatpur",
@@ -112,7 +76,9 @@ const trainsData = [
         "local_attractions": {
             "destination": "Agra",
             "attractions": ["Taj Mahal", "Agra Fort", "Fatehpur Sikri"]
-        }
+        },
+        "classes": ["First Class", "Second Class"],
+        "classPrice": ["₹4000", "₹3000"]
     },
     {
         "train_no": "45678",
@@ -125,15 +91,15 @@ const trainsData = [
         "duration": "12 hours",
         "intermediate_stops": ["Vijayawada", "Visakhapatnam", "Bhubaneswar", "Kharagpur"],
         "facilities": {
-            "dining": true,
-            "restrooms": true,
-            "power_outlets": true
+            "dining": "true",
+            "restrooms": "true",
+            "power_outlets": "true"
         },
         "food_options": {
-            "catering_services": true,
+            "catering_services": "true",
             "menu_options": ["South Indian Meal", "North Indian Meal", "Snacks", "Beverages"],
             "meal_timings": "Breakfast: 10:30-12:00, Lunch: 13:30-15:00, Dinner: 19:30-21:00",
-            "special_meals": false
+            "special_meals": "false"
         },
         "train_status": {
             "current_location": "Bhubaneswar",
@@ -148,7 +114,9 @@ const trainsData = [
         "local_attractions": {
             "destination": "Kolkata",
             "attractions": ["Victoria Memorial", "Howrah Bridge", "Dakshineswar Kali Temple"]
-        }
+        },
+        "classes": ["First Class", "Second Class", "Sleeper Class"],
+        "classPrice": ["₹5500", "₹4000", "₹3000"]
     },
     {
         "train_no": "56789",
@@ -161,16 +129,16 @@ const trainsData = [
         "duration": "7 hours",
         "intermediate_stops": ["Mumbai"],
         "facilities": {
-            "dining": true,
-            "restrooms": true,
-            "power_outlets": true,
-            "entertainment": true
+            "dining": "true",
+            "restrooms": "true",
+            "power_outlets": "true",
+            "entertainment": "true"
         },
         "food_options": {
-            "catering_services": true,
+            "catering_services": "true",
             "menu_options": ["Gujarati Meal", "Maharashtrian Meal", "Snacks", "Beverages"],
             "meal_timings": "Lunch: 12:30-14:30, Snacks: 16:00-17:00",
-            "special_meals": false
+            "special_meals": "false"
         },
         "train_status": {
             "current_location": "Mumbai",
@@ -185,7 +153,9 @@ const trainsData = [
         "local_attractions": {
             "destination": "Pune",
             "attractions": ["Shaniwar Wada", "Aga Khan Palace", "Sinhagad Fort"]
-        }
+        },
+        "classes": ["First Class", "Second Class"],
+        "classPrice": ["₹6000", "₹4500"]
     },
     {
         "train_no": "67890",
@@ -198,15 +168,15 @@ const trainsData = [
         "duration": "10 hours",
         "intermediate_stops": ["New Jalpaiguri", "Lucknow", "Delhi"],
         "facilities": {
-            "dining": true,
-            "restrooms": true,
-            "power_outlets": true
+            "dining": "true",
+            "restrooms": "true",
+            "power_outlets": "true"
         },
         "food_options": {
-            "catering_services": true,
+            "catering_services": "true",
             "menu_options": ["Assamese Meal", "North Indian Meal", "Snacks", "Beverages"],
             "meal_timings": "Lunch: 13:30-15:00, Dinner: 20:00-21:30",
-            "special_meals": false
+            "special_meals": "false"
         },
         "train_status": {
             "current_location": "Lucknow",
@@ -221,7 +191,9 @@ const trainsData = [
         "local_attractions": {
             "destination": "Jammu Tawi",
             "attractions": ["Vaishno Devi Temple", "Bahu Fort", "Raghunath Temple"]
-        }
+        },
+        "classes": ["First Class", "Second Class"],
+        "classPrice": ["₹5500", "₹4000"]
     },
     {
         "train_no": "78901",
@@ -234,15 +206,15 @@ const trainsData = [
         "duration": "18 hours",
         "intermediate_stops": ["Mughalsarai", "Allahabad", "Bhopal", "Nashik"],
         "facilities": {
-            "dining": true,
-            "restrooms": true,
-            "power_outlets": true
+            "dining": "true",
+            "restrooms": "true",
+            "power_outlets": "true"
         },
         "food_options": {
-            "catering_services": true,
+            "catering_services": "true",
             "menu_options": ["Bihari Meal", "Maharashtrian Meal", "Snacks", "Beverages"],
             "meal_timings": "Lunch: 14:00-16:00, Dinner: 19:30-21:30",
-            "special_meals": false
+            "special_meals": "false"
         },
         "train_status": {
             "current_location": "Bhopal",
@@ -257,7 +229,9 @@ const trainsData = [
         "local_attractions": {
             "destination": "Mumbai",
             "attractions": ["Gateway of India", "Marine Drive", "Elephanta Caves"]
-        }
+        },
+        "classes": ["First Class", "Second Class"],
+        "classPrice": ["₹6000", "₹4500"]
     },
     {
         "train_no": "89012",
@@ -270,10 +244,10 @@ const trainsData = [
         "duration": "2 hours",
         "intermediate_stops": ["Nagercoil"],
         "facilities": {
-            "restrooms": true
+            "restrooms": "true"
         },
         "food_options": {
-            "catering_services": false
+            "catering_services": "false"
         },
         "train_status": {
             "current_location": "Nagercoil",
@@ -288,7 +262,9 @@ const trainsData = [
         "local_attractions": {
             "destination": "Kanyakumari",
             "attractions": ["Vivekananda Rock Memorial", "Thiruvalluvar Statue", "Kanyakumari Beach"]
-        }
+        },
+        "classes": ["General", "Second Sitting"],
+        "classPrice": ["₹200", "₹300"]
     },
     {
         "train_no": "90123",
@@ -301,10 +277,10 @@ const trainsData = [
         "duration": "3 hours",
         "intermediate_stops": ["Sultanpur"],
         "facilities": {
-            "restrooms": true
+            "restrooms": "true"
         },
         "food_options": {
-            "catering_services": false
+            "catering_services": "false"
         },
         "train_status": {
             "current_location": "Sultanpur",
@@ -319,7 +295,9 @@ const trainsData = [
         "local_attractions": {
             "destination": "Varanasi",
             "attractions": ["Kashi Vishwanath Temple", "Dashashwamedh Ghat", "Sarnath"]
-        }
+        },
+        "classes": ["General", "Second Sitting"],
+        "classPrice": ["₹150", "₹250"]
     },
     {
         "train_no": "10111",
@@ -332,15 +310,15 @@ const trainsData = [
         "duration": "18 hours",
         "intermediate_stops": ["Ludhiana", "Delhi", "Kanpur", "Asansol"],
         "facilities": {
-            "dining": true,
-            "restrooms": true,
-            "power_outlets": true
+            "dining": "true",
+            "restrooms": "true",
+            "power_outlets": "true"
         },
         "food_options": {
-            "catering_services": true,
+            "catering_services": "true",
             "menu_options": ["Punjabi Meal", "Bengali Meal", "Snacks", "Beverages"],
             "meal_timings": "Lunch: 13:00-15:00, Dinner: 20:00-22:00",
-            "special_meals": false
+            "special_meals": "false"
         },
         "train_status": {
             "current_location": "Asansol",
@@ -355,7 +333,9 @@ const trainsData = [
         "local_attractions": {
             "destination": "Kolkata",
             "attractions": ["Belur Math", "Science City Kolkata", "Eco Park"]
-        }
+        },
+        "classes": ["General", "Second Sitting"],
+        "classPrice": ["₹250", "₹350"]
     }
 
 ];
